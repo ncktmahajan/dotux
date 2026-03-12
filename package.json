@@ -1,0 +1,19 @@
+{
+  "name": "nachiket-ux",
+  "version": "1.0.0",
+  "description": "Local .ux domain server — nachiket.ux runs on your machine",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "start:https": "HTTPS_PORT=443 node server.js",
+    "setup": "bash scripts/setup-hosts.sh && bash scripts/setup-ssl.sh"
+  },
+  "keywords": ["local-domain", "custom-tld", "nachiket", "ux", "dev-server"],
+  "author": "Nachiket",
+  "license": "MIT",
+  "dependencies": {},
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

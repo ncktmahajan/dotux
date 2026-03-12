@@ -1,0 +1,7 @@
+node_modules/
+ssl/*.pem
+ssl/*.p12
+.env
+*.log
+.DS_Store
+Thumbs.db
