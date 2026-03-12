@@ -1,8 +1,8 @@
 /**
- * nachiket.ux — Local Domain Server
+ * nchikt.ux — Local Domain Server
  * Serves HTTP on port 80 (or PORT env var)
  * Run: node server.js
- * Requires: nachiket.ux → 127.0.0.1 in /etc/hosts
+ * Requires: nchikt.ux → 127.0.0.1 in /etc/hosts
  */
 
 const http = require("http");
@@ -75,7 +75,7 @@ function requestHandler(req, res) {
     res.writeHead(200, {
       "Content-Type": contentType,
       "Cache-Control": "no-cache",
-      "X-Powered-By": "nachiket.ux",
+      "X-Powered-By": "nchikt.ux",
     });
     res.end(data);
   });
@@ -91,7 +91,7 @@ function get404Page() {
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>404 — nachiket.ux</title>
+  <title>404 — nchikt.ux</title>
   <style>
     body { margin: 0; background: #0a0a0a; color: #fff;
            font-family: monospace; display: flex; align-items: center;
@@ -104,7 +104,7 @@ function get404Page() {
 <body>
   <div>
     <h1>404</h1>
-    <p>Page not found on <strong>nachiket.ux</strong></p>
+    <p>Page not found on <strong>nchikt.ux</strong></p>
     <a href="/">← Go Home</a>
   </div>
 </body>
@@ -116,22 +116,22 @@ const httpServer = http.createServer(requestHandler);
 
 httpServer.listen(PORT, () => {
   console.log("");
-  console.log("  ███╗   ██╗ █████╗  ██████╗██╗  ██╗██╗██╗  ██╗███████╗████████╗");
-  console.log("  ████╗  ██║██╔══██╗██╔════╝██║  ██║██║██║ ██╔╝██╔════╝╚══██╔══╝");
-  console.log("  ██╔██╗ ██║███████║██║     ███████║██║█████╔╝ █████╗     ██║   ");
-  console.log("  ██║╚██╗██║██╔══██║██║     ██╔══██║██║██╔═██╗ ██╔══╝     ██║   ");
-  console.log("  ██║ ╚████║██║  ██║╚██████╗██║  ██║██║██║  ██╗███████╗   ██║   ");
-  console.log("  ╚═╝  ╚═══╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚═╝╚═╝  ╚═╝╚══════╝   ╚═╝  .ux");
+ console.log("  ███╗   ██╗ ██████╗██╗  ██╗██╗██╗  ██╗████████╗");
+ console.log("  ████╗  ██║██╔════╝██║  ██║██║██║ ██╔╝╚══██╔══╝");
+ console.log("  ██╔██╗ ██║██║     ███████║██║█████╔╝    ██║   ");
+ console.log("  ██║╚██╗██║██║     ██╔══██║██║██╔═██╗    ██║   ");
+ console.log("  ██║ ╚████║╚██████╗██║  ██║██║██║  ██╗   ██║   ");
+ console.log("  ╚═╝  ╚═══╝ ╚═════╝╚═╝  ╚═╝╚═╝╚═╝  ╚═╝  ╚═╝  .ux");
   console.log("");
-  console.log(`  🚀 HTTP  → http://nachiket.ux  (port ${PORT})`);
+  console.log(`  🚀 HTTP  → http://nchikt.ux  (port ${PORT})`);
   console.log("");
   console.log("  Press Ctrl+C to stop");
   console.log("─".repeat(60));
 });
 
 // ─── Optional HTTPS ───────────────────────────────────────────
-const SSL_KEY = path.join(__dirname, "ssl", "nachiket.ux-key.pem");
-const SSL_CERT = path.join(__dirname, "ssl", "nachiket.ux.pem");
+const SSL_KEY = path.join(__dirname, "ssl", "nchikt.ux-key.pem");
+const SSL_CERT = path.join(__dirname, "ssl", "nchikt.ux.pem");
 
 if (fs.existsSync(SSL_KEY) && fs.existsSync(SSL_CERT)) {
   const httpsOptions = {
@@ -140,7 +140,7 @@ if (fs.existsSync(SSL_KEY) && fs.existsSync(SSL_CERT)) {
   };
   const httpsServer = https.createServer(httpsOptions, requestHandler);
   httpsServer.listen(HTTPS_PORT, () => {
-    console.log(`  🔒 HTTPS → https://nachiket.ux  (port ${HTTPS_PORT})`);
+    console.log(`  🔒 HTTPS → https://nchikt.ux  (port ${HTTPS_PORT})`);
   });
 } else {
   console.log("  ℹ️  No SSL certs found — run scripts/setup-ssl.sh to enable HTTPS");
@@ -148,6 +148,6 @@ if (fs.existsSync(SSL_KEY) && fs.existsSync(SSL_CERT)) {
 
 // ─── Graceful Shutdown ────────────────────────────────────────
 process.on("SIGINT", () => {
-  console.log("\n\n  👋 nachiket.ux server stopped.\n");
+  console.log("\n\n  👋 nchikt.ux server stopped.\n");
   process.exit(0);
 });

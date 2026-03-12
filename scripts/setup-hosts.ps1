@@ -1,16 +1,16 @@
 # ─────────────────────────────────────────────────────────────
 #  setup-hosts.ps1
-#  Adds nachiket.ux → 127.0.0.1 to Windows hosts file
+#  Adds nchikt.ux → 127.0.0.1 to Windows hosts file
 #  Usage: Run as Administrator in PowerShell
 #         .\scripts\setup-hosts.ps1
 # ─────────────────────────────────────────────────────────────
 
 $hostsFile = "C:\Windows\System32\drivers\etc\hosts"
-$entry = "127.0.0.1    nachiket.ux"
-$marker = "# nachiket.ux local domain"
+$entry = "127.0.0.1    nchikt.ux"
+$marker = "# nchikt.ux local domain"
 
 Write-Host ""
-Write-Host "  🌐 nachiket.ux — Hosts File Setup (Windows)" -ForegroundColor Cyan
+Write-Host "  🌐 nchikt.ux — Hosts File Setup (Windows)" -ForegroundColor Cyan
 Write-Host "─────────────────────────────────────────────"
 
 # Check admin
@@ -26,9 +26,9 @@ if (-not $isAdmin) {
 
 # Check if already added
 $content = Get-Content $hostsFile
-if ($content -match "nachiket\.ux") {
-  Write-Host "  ✅ nachiket.ux is already in hosts file" -ForegroundColor Green
-  $content | Where-Object { $_ -match "nachiket" } | ForEach-Object {
+if ($content -match "nchikt\.ux") {
+  Write-Host "  ✅ nchikt.ux is already in hosts file" -ForegroundColor Green
+  $content | Where-Object { $_ -match "nchikt" } | ForEach-Object {
     Write-Host "     $_" -ForegroundColor Yellow
   }
   Write-Host ""
@@ -44,5 +44,5 @@ Write-Host "  ✅ Added to hosts file:" -ForegroundColor Green
 Write-Host "     $entry" -ForegroundColor Yellow
 Write-Host ""
 Write-Host "  Now run (as admin):  node server.js" -ForegroundColor Cyan
-Write-Host "  Then open:           http://nachiket.ux" -ForegroundColor Cyan
+Write-Host "  Then open:           http://nchikt.ux" -ForegroundColor Cyan
 Write-Host ""

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # ─────────────────────────────────────────────────────────────
 #  setup-ssl.sh
-#  Generates local SSL certificates for nachiket.ux via mkcert
+#  Generates local SSL certificates for nchikt.ux via mkcert
 #  Usage: bash scripts/setup-ssl.sh
 # ─────────────────────────────────────────────────────────────
 
@@ -9,7 +9,7 @@ SSL_DIR="$(dirname "$0")/../ssl"
 mkdir -p "$SSL_DIR"
 
 echo ""
-echo "  🔒 nachiket.ux — HTTPS Setup with mkcert"
+echo "  🔒 nchikt.ux — HTTPS Setup with mkcert"
 echo "─────────────────────────────────────────────"
 
 # Check mkcert installed
@@ -30,10 +30,10 @@ fi
 echo "  📋 Installing local CA..."
 mkcert -install
 
-# Generate certs for nachiket.ux
-echo "  🔑 Generating certificate for nachiket.ux..."
+# Generate certs for nchikt.ux
+echo "  🔑 Generating certificate for nchikt.ux..."
 cd "$SSL_DIR"
-mkcert nachiket.ux
+mkcert nchikt.ux
 
 echo ""
 echo "  ✅ Certificates created in /ssl:"
@@ -42,5 +42,5 @@ echo ""
 echo "  🚀 Now restart the server:"
 echo "     sudo node server.js"
 echo ""
-echo "  Then open:  https://nachiket.ux"
+echo "  Then open:  https://nchikt.ux"
 echo ""

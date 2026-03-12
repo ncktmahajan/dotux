@@ -1,23 +1,23 @@
 #!/usr/bin/env bash
 # ─────────────────────────────────────────────────────────────
 #  setup-hosts.sh
-#  Adds nachiket.ux → 127.0.0.1 to /etc/hosts
+#  Adds nchikt.ux → 127.0.0.1 to /etc/hosts
 #  Usage: sudo bash scripts/setup-hosts.sh
 # ─────────────────────────────────────────────────────────────
 
 HOSTS_FILE="/etc/hosts"
-ENTRY="127.0.0.1    nachiket.ux"
-MARKER="# nachiket.ux local domain"
+ENTRY="127.0.0.1  nchikt.ux"
+MARKER="# nchikt.ux local domain"
 
 echo ""
-echo "  🌐 nachiket.ux — Hosts File Setup"
+echo "  🌐 nchikt.ux — Hosts File Setup"
 echo "─────────────────────────────────────"
 
 # Check if already added
-if grep -q "nachiket.ux" "$HOSTS_FILE"; then
-  echo "  ✅ nachiket.ux is already in $HOSTS_FILE"
+if grep -q "nchikt.ux" "$HOSTS_FILE"; then
+  echo "  ✅ nchikt.ux is already in $HOSTS_FILE"
   echo ""
-  grep "nachiket.ux" "$HOSTS_FILE"
+  grep "nchikt.ux" "$HOSTS_FILE"
   echo ""
   exit 0
 fi
@@ -39,5 +39,5 @@ echo "  ✅ Added to $HOSTS_FILE:"
 echo "     $ENTRY"
 echo ""
 echo "  Now run: sudo node server.js"
-echo "  Then open: http://nachiket.ux"
+echo "  Then open: http://nchikt.ux"
 echo ""
