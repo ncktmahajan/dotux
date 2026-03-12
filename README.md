@@ -1,4 +1,4 @@
-# nachiket.ux — Local Custom Domain
+# nchikt.ux — Local Custom Domain
 
 > Your own `.ux` top-level domain, running entirely on your machine (or local network).
 > No ICANN. No registrar. No cloud. Just a hosts file entry and Node.js.
@@ -36,14 +36,14 @@ nachiket-ux/
 ```bash
 sudo bash scripts/setup-hosts.sh
 # OR manually:
-sudo echo "127.0.0.1    nachiket.ux" >> /etc/hosts
+sudo echo "127.0.0.1    nchikt.ux" >> /etc/hosts
 ```
 
 **Windows** (run PowerShell as Administrator):
 ```powershell
 .\scripts\setup-hosts.ps1
 # OR manually edit: C:\Windows\System32\drivers\etc\hosts
-# Add: 127.0.0.1    nachiket.ux
+# Add: 127.0.0.1    nchikt.ux
 ```
 
 ### Step 2 — Start the server
@@ -65,7 +65,7 @@ node server.js
 ### Step 3 — Open in browser
 
 ```
-http://nachiket.ux
+http://nchikt.ux
 ```
 
 That's it. ✅
@@ -93,15 +93,15 @@ bash scripts/setup-ssl.sh
 ```
 
 This creates:
-- `ssl/nachiket.ux.pem`
-- `ssl/nachiket.ux-key.pem`
+- `ssl/nchikt.ux.pem`
+- `ssl/nchikt.ux-key.pem`
 
 The server detects these automatically on startup.
 
 ### Open HTTPS
 ```bash
 sudo node server.js
-# → https://nachiket.ux
+# → https://nchikt.ux
 ```
 
 ---
@@ -136,7 +136,7 @@ sudo apt install dnsmasq
    ```
 
 4. On each device, set DNS server to your machine's local IP.
-   Now `nachiket.ux` resolves everywhere on your network.
+   Now `nchikt.ux` resolves everywhere on your network.
 
 ---
 
@@ -157,11 +157,11 @@ HTTPS_PORT=8443 node server.js    # HTTPS on port 8443
 ## 🔧 How It Works
 
 ```
-Browser: http://nachiket.ux
+Browser: http://nchikt.ux
          ↓
 OS checks /etc/hosts
          ↓
-Finds:   127.0.0.1  nachiket.ux
+Finds:   127.0.0.1  nchikt.ux
          ↓
 Connects to localhost:80
          ↓
@@ -179,7 +179,7 @@ Your hosts file intercepts the domain before any real DNS query fires.
 
 Option 1 — Use a real subdomain:
 ```
-ux.nachiket.design   ← works globally, looks like a UX namespace
+ux.nchikt.design   ← works globally, looks like a UX namespace
 ```
 
 Option 2 — Tunnel your local server:
